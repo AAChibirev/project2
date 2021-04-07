@@ -1,5 +1,7 @@
 package chapter3;
 
+import java.math.BigDecimal;
+
 public class MainClass {
 
     public static void main(String[] args) {
@@ -28,7 +30,7 @@ public class MainClass {
         Measurable objectWithLargest = objects[0];
 
         for (int i = 1; i < objects.length; i++) {
-            if (objectWithLargest.getMeasure() < objects[i].getMeasure()) {
+            if (new BigDecimal(objectWithLargest.getMeasure()).compareTo(new BigDecimal(objects[i].getMeasure())) < 0) {
                 objectWithLargest = objects[i];
             }
         }
