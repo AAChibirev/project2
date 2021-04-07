@@ -1,5 +1,6 @@
 package chapter2;
 
+import java.math.BigDecimal;
 import java.util.Scanner;
 
 class Car {
@@ -19,7 +20,7 @@ class Car {
         double milesLeft = miles;
         double milesPossibleAtTheMoment = (fuelLevel / fuelEfficiency * 100);
         while (milesLeft > 0) {
-            if (milesLeft < milesPossibleAtTheMoment) {
+            if (new BigDecimal(milesLeft).compareTo(new BigDecimal(milesPossibleAtTheMoment)) < 0) {
                 distance += milesLeft;
                 fuelLevel -= milesLeft / fuelEfficiency;
                 milesLeft = 0;
